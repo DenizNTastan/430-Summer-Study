@@ -1,0 +1,127 @@
+\chapter{Maxwell Distribution of Speeds}
+The goal in this chapter is to find the distribution of speeds/velocities of an ideal gas at equilibrium. To start, consider the particle in a box.
+\begin{equation}
+    \phi_i(x,y,z) = A\sin\frac{n_1\pi x}{L_x}\sin\frac{n_2\pi y}{L_y}\sin\frac{n_3\pi z}{L_z}
+\end{equation}
+The eigenstates of a particle in a box can be generated from a superposition of two eigenstates of the momentum operator (with eigenvalues $\hbar k$ and $-\hbar k$). The wavevector of this state is 
+\begin{equation}
+    \v{k} = k_x\bas{x}+k_y\bas{y}+k_z\bas{z}
+\end{equation}
+where $k_i$ are defined as $n_i\pi x_i/L_i$. Thus, the wavevectors are quantized. Since $k_i$ are positive numbers, we confine $\v{k}$ to the $(+,+,+)$ octant of the $k$-space. In this case, $L_i$ can be interpreted as the dimensions of the system. If $L_i >> \lambda_D$, then the points in the space ($k$-points) are very close. Multiplying the partition function by unity, we get:
+\begin{equation}
+    Z=\sum e^{-\beta\varepsilon(\v{k})}=\frac{1}{\Delta k_x\Delta k_y\Delta k_z}\sum e^{-\beta\varepsilon(\v{k})}\Delta k_x\Delta k_y\Delta k_z. 
+\end{equation}
+At the aforementioned case, this sum becomes an integral with
+\begin{equation}
+    Z \approx \frac{1}{\frac{\pi}{L_x}\frac{\pi}{L_y}\frac{\pi}{L_z}}\iiint_0^\infty e^{-\beta\varepsilon(\v{k})}dk_xdk_ydk_z.
+\end{equation}
+The coefficient at the front is simply $V/\pi^3$. \\
+Since a lot of our potentials are spherically symmetric, it is advantageous to work in spherical coordinates. Moreover, if the energy does not depend on the direction of the wavevector, then we simply get $\varepsilon(\v{k})=\varepsilon(k)$. This simplifies the triple integral over $dk_xdk_ydk_z$ into just $dk$. Here, we can define the \textbf{density of states} $D(k)$ as
+\begin{equation}
+    \frac{V}{\pi^3}\int d\v{k}e^{-\beta\varepsilon(\v{k})}=\int dk e^{-\beta\varepsilon(k)}D(k).
+\end{equation}
+We further define the number of states in a spherical shell with radius $k$ and thickness $dk$ as $dN := D(k)dk$. \\ 
+\\
+Let us now calculate the density of states in three, two, and one dimensions. In three dimensions, for $dV_k$ the volume of the shell and $\Delta V_k$ the volume of a box in the discretized $k$-space,
+\begin{equation}
+    \begin{rcases}
+        \Delta V_k = \frac{\pi}{L_x}\frac{\pi}{L_y}\frac{\pi}{L_z}=\frac{\pi^3}{V}\\
+        dV_k = \frac{4\pi k^2}{8}dk
+    \end{rcases}dN = \frac{\frac{\pi k^2}{2}}{\frac{\pi^3}{V}}dk = \underbrace{\frac{Vk^2}{2\pi^2}}_{D(k)}dk.
+\end{equation}
+In two dimensions,
+\begin{equation}
+    \begin{rcases}
+        \Delta V_k = \frac{\pi^2}{A}\\ 
+        dV_k = \frac{2\pi k}{4}dk
+    \end{rcases}dN = \underbrace{\frac{Ak}{2\pi}}_{D(k)}dk.
+\end{equation}
+And finally, in one dimensions,
+\begin{equation}
+    \begin{rcases}
+        \Delta V_k = \frac{\pi}{L} \\ dV_k = dk
+    \end{rcases}dN=\underbrace{\frac{L}{\pi}}_{D(k)}dk
+\end{equation}
+At this point, we can either write the partition function as a function of $k$ or as a function of $\varepsilon$. Then, we define a correspondence as
+\begin{equation}
+    Z = \int dk D(k)e^{-\beta\varepsilon(k)}\equiv \int d\varepsilon D(\varepsilon)e^{-\beta\varepsilon}.
+\end{equation}
+We also refer to $D(\varepsilon)$ as the density of states with the definition
+\begin{equation}
+    D(\varepsilon)d\varepsilon \equiv D(k)dk \implies D(\varepsilon)=D(k)\frac{dk}{d\varepsilon}.
+\end{equation}
+Note that while the form of $D(k)$ depends on the dimension of the problem, the form of $D(\varepsilon)$ depends on the functional form of $D(\varepsilon)$, i.e. $dk/d\varepsilon$.\\
+\\
+As an example, consider the free particle. In three dimensions, $\varepsilon=\frac{\hbar^2k^2}{2m}$. Then
+\begin{equation}
+    k = \sqfrac{2m\varepsilon}{\hbar^2} = \lrp{\frac{2m}{\hbar^2}}^{1/2}\varepsilon^{1/2}.
+\end{equation}
+\begin{equation}
+    \implies \frac{dk}{d\varepsilon} = \sqrt{\frac{m}{2\hbar^2}}\varepsilon^{-1/2}
+\end{equation}
+Also, 
+\begin{equation}
+    D(k)=\frac{V}{2\pi^2}k^2 \implies D(k(\varepsilon)) = \frac{V}{2\pi^2}\frac{2m\varepsilon}{\hbar^2}.
+\end{equation}
+Then, by above definition,
+\begin{equation}
+    D(\varepsilon) = \frac{V}{\pi^2}\frac{m\varepsilon}{\hbar^2}\sqfrac{m}{2\hbar^2}\varepsilon^{-1/2} = \frac{Vm}{2\pi^2\hbar^3}\sqrt{2m\varepsilon}.
+\end{equation}
+In two and one dimensions,
+\begin{align}
+    D_2(\varepsilon) =& \frac{A}{2\pi}\frac{m}{\hbar^2}=\mathrm{constant}\\
+    D_1(\varepsilon) =& \frac{L\sqrt{m}}{\sqrt{2}\pi\hbar^2}\varepsilon^{-1/2}.
+\end{align}
+
+\section{Classical Gas Velocity Distribution}
+    \textbf{Question:} How many particles occupy energy states whose wavevector lies between $k$ and $k+dk$?\\
+    \\
+    To answer this, let us denote the number of particles as $f(k)dk$ and the number of states between $k$ and $k+dk$ as $D(k)dk$. We know that the number of occupied states is
+    \begin{equation}
+        N\frac{e^{-\beta\varepsilon(k)}}{Z}.
+    \end{equation}
+    Then, $f(k)dk = \frac{D(k)N}{Z}dk\exp\lrp{-\beta\varepsilon(k)}.$
+    For the particle in a box,
+    \begin{equation}
+        f(k)dk = \frac{Vk^2}{2\pi^2}dk\frac{e^{-\beta\hbar^2k^2/2m}}{V/\lambda_D^3}
+    \end{equation}
+    \begin{equation}
+        \implies f(k) = N\frac{\lambda_D^3k^2}{2\pi^2}e^{-\beta\hbar^2k^2/2m}
+    \end{equation}
+    Now, we convert $f(k)$ to the distribution of speeds $n(u)$.
+    \begin{equation}
+        n(u)du = f(k)dk \hspace{0.5cm}\mathrm{and}\hspace{0.5cm}\hbar k=mu
+    \end{equation}
+    \begin{equation}
+        n(u)du = N\frac{\lambda_D^3u^2m^2}{2\pi^2\hbar^2}e^{-\beta mu^2/2}\frac{m}{\hbar}du
+    \end{equation}
+    \begin{equation}
+        \therefore n(u) = \frac{\lambda_D^3m^3}{2\pi^2\hbar^3}e^{-\frac{1}{2}mu^2\beta}
+    \end{equation}
+    This is the \textbf{Maxwell distribution}. Since both the $f(k)$ and $n(u)$ are probability distributions, they can be used to compute averages. For any quantity $A$,
+    \begin{equation}
+        \bar{A} = \frac{\int dkf(k)A(k)}{\int dkf(k)} = \frac{\int dun(u)A(k(u))}{\int dun(u)}.
+    \end{equation}
+    As an exercise, let us calculate the average kinetic energy for an ideal gas.
+    \begin{equation}
+        \bar{K} = \frac{1}{2}m\bar{u}^2 = \frac{1}{2}m\frac{\int du n(u)u^2}{\int dun(u)}
+    \end{equation}
+    Cancelling the constants from the numerator and the denominator, we get
+    \begin{equation}
+        \bar{K}=\frac{1}{2}m\frac{\int du u^4e^{-mu^2\beta/2}}{\int du u^2e^{-mu^2\beta/2}}.
+    \end{equation}
+    Let us denote the integral in the numerator as $I_4$ and the one in the denominator as $I_2$. Defining $\alpha = m\beta/2$, 
+    \begin{equation}
+        I_2 = -\periv{}{\alpha}\int_0^\infty e^{-\alpha u^2}du=-\frac{1}{2}\periv{}{\alpha}\lrp{\sqfrac{\pi}{\alpha}}=\frac{\sqrt{\pi}}{4}\alpha^{-3/2}
+    \end{equation}
+    \begin{equation}
+        I_4 = -\periv{I_2}{\alpha} = \frac{3\sqrt{\pi}}{8}\alpha^{-5/2}
+    \end{equation}
+    Then,
+    \begin{equation}
+        \bar{K} = \frac{1}{2}m\frac{\frac{3\sqrt{\pi}}{8}\alpha^{-5/2}}{\frac{\sqrt{\pi}}{4}\alpha^{-3/2}}=\frac{3m}{4\alpha} = \frac{6m}{4m\beta}
+    \end{equation}
+    This gives the same result we know as the kinetic theory of the ideal gas and is the same as the one we got from the equipartition theorem.
+    \begin{equation}
+        \bar{K} = \frac{3}{2}k_BT
+    \end{equation}

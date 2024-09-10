@@ -1,0 +1,67 @@
+\newgeometry{top=10pt, bottom=10pt, left=5pt, right=5pt}
+\addpendix{\sout{Cheat} Formula Sheet}{app:cheat}
+
+\setlength{\columnseprule}{0.5pt}
+
+\begin{multicols}{3}
+
+%COL 1
+\underline{\textbf{CH 1: First Law of Th.}}\\ \\
+Van der Waals Gas: \\ $\theta R = \lrp{P + \frac{a}{V^2}}(V-b)$ \\ \\
+Thermodynamic Functions:\\
+Enthalpy(H): $H = U + PV$ \\$dH=\theta dS+VdP$ , $\periv{H}{\theta} =\periv{Q}{\theta} = C_P$ \\
+Helmholtz Free Energy(F):\\ $F=U-\theta S$, $dF =-(PdV+Sd\theta)$\\
+Gibbs Free Energy(G):\\ $G=U-\theta S+PV$, $dG = VdP-Sd\theta$ \\ \\
+First Law: \\ $\Delta U = W+Q$ \\
+(Reversible): \\ $dU = \dbar Q_{\text{rev}} -PdV$ \\ \\
+For ideal gas: \\ $\Delta W = -nR\theta_G\ln\lrp{\frac{V_2}{V_1}}$ \\ $U=\frac{3}{2}nR\theta$, $C_V = \frac{3nR}{2}, C_P = \frac{5}{2}nR$   \\ \\ 
+Heat capacities (Reversible): \\
+$C_V = \periv{U}{\theta}$, $C_P = C_V+P\periv{V}{\theta}$ \\ \\
+Ideal, reversible, adiabatic:\\
+$P = CV^{-\gamma}$, $\gamma = C_P/C_V$ \\ \\
+Legendre Transformation: 
+\begin{equation*}
+            dg = \sum_{i=1}^ru_idx_i-\sum_{i=r+1}^nx_idu_i
+\end{equation*}
+
+\columnbreak
+
+%COL 2
+\underline{\textbf{CH 2: Entropy}} \\ \\ $dS = \frac{\dbar Q}{\theta}$ \\ \\ Ideal gas: \\ $\Delta S = \frac{3}{2}nR\ln\lrp{\frac{\theta_f}{\theta_i}}+nR\ln\lrp{\frac{V_f}{V_i}}$ \\ \\
+Carnot Eng. effc.: $\eta = \frac{W}{Q_H}=\frac{1 - Q_C}{Q_H} < 1$\\ \\
+Isothermal exp.: $P\propto V^{-1}$. \\
+Adiabatic exp.: $\Delta Q=0$. $P\propto V^{-\gamma}$. \\
+Isothermal comp.: $P\propto V^{-1}$. \\
+Adiabatic comp.: $\Delta Q = 0$. $P\propto V^{-\gamma}$.  \\ \\
+Kelvin scale (T) $\equiv$ Ideal gas temp. scale \\ \\
+Heat flow eq. Carnot cyl.:  $\frac{Q_1}{T_1} + \frac{Q_2}{T_2} = 0$ \\ \\
+$dU = TdS - PdV$ \\
+$C_V = T\lrp{\periv{S}{T}}_V$ , $C_P = T\lrp{\periv{S}{T}}_P$ \\ \\
+Reversible, const. pres.\\
+$\Delta S = \int_{T_i}^{T_f}C_P(T)\frac{dT}{T}$ \\ \\
+Phase trans. const. temp.\\
+$\Delta S = \frac{\Delta Q_p}{T_p}=\frac{\Delta H}{T_p}$ \\ \\
+Third Law: $S \longrightarrow const.$, as $T \longrightarrow 0$ \\ \\
+Clausius' inequality: $\frac{\delta Q_\text{irrev}}{T} < \delta S$ \\
+For $\delta Q_\text{irrev} = 0$, $\delta S>0$ \\
+$\deriv{S}{t} = \deriv{U_A}{t}\lrp{\frac{1}{T_A}-\frac{1}{T_B}}\geq 0$ \\ \\
+Chemical potential:$\mu = -T\lrp{\periv{S}{N}}_{U,V}$ \\ \\
+$S=S(U,V,N) \longrightarrow  \\dS = \lrp{\periv{S}{U}}_{V,N} dU + \lrp{\periv{S}{V}}_{U,N}dV + \lrp{\periv{S}{N}}_{U,V}dN $
+
+
+
+\columnbreak
+
+%COL 3
+asf
+
+
+
+\end{multicols}
+
+
+
+
+
+
+\restoregeometry 

@@ -1,0 +1,220 @@
+\chapter{Systems with Variable Numbers \\ of Particles}
+
+    In this chapter, we will look at systems where the number of particles can change. This change can occur in two ways:
+    \begin{enumerate}
+        \item[i)] Particles can enter or leave the system. This occurs through a permeable membrane between the two systems. If there are no external forces at work, larger density of particles in one system drives the flow of particles to the other system. In any case, the total number of particles is conserved.
+        \begin{equation}
+            N_A+N_B=N \implies \deriv{N_A}{N_B}=-1
+        \end{equation}
+        \item[ii)] A reaction occurs between the particles in a single system. This way, new kinds of particles are created from those that were already in the system. Reactions occur such that the entropy of the system increases. To satisfy this, a reaction can occur simultaneously in both directions or on one direction only. 
+        \begin{equation}
+            \ce{C + D <--> CD}
+            \label{chem:one}
+        \end{equation} 
+        \begin{equation}
+            N_C+N_D+N_{CD}=N \implies   \deriv{N_C}{N_D}=1 \hspace*{0.5cm} \deriv{N_C}{N_{CD}}=-1
+        \end{equation}
+    \end{enumerate}
+    If a reaction is reversible as in the case in (\ref{chem:one}), then the reaction comes to a chemical equilibrium at some point in time. The chemical equilibrium can be reached in two ways corresponding to the two cases we mentioned before. Looking at the total entropy for the case where there is particle addition or removal, we have
+    \begin{align}
+        S = S_A+S_B \implies dS =& \periv{S_A}{N_A}dN_A+\periv{S_B}{N_B}dN_B \notag\\
+                                =& dN_A\lrp{\periv{S_A}{N_A}-\periv{S_B}{N_B}}.
+    \end{align}
+    Recall that the full form of the first law was
+    \begin{equation}
+        dU = TdS + \mu d_N.
+    \end{equation}
+    If we consider that the internal energy of the systems does not change and that at equilibrium, $T_A=T_B=T$;
+    \begin{equation}
+        \deriv{S}{N}=-\frac{\mu}{T}
+    \end{equation}
+    Then,
+    \begin{equation}
+        dS = - \frac{N_A}{T}(\mu_A-\mu_B)
+    \end{equation}
+    Since the equilibrium is the state with the maximum entropy, $dS=0$. Therefore, we reach one of the equilibrium conditions.
+    \begin{equation}
+        \mu_A=\mu_B
+    \end{equation}
+    Now, we look at the reactions. For a reaction such as the one in (\ref{chem:one}),
+    \begin{equation}
+        S = S_C(N_C) + S_D(N_D)+S_{CD}(N_{CD})
+    \end{equation}
+    \begin{align}
+        dS =& \periv{S_C}{N_C}dN_C + \periv{S_D}{N_D}dN_D+\periv{S_{CD}}{N_{CD}}dN_{CD}\notag\\
+           =& dN_C\lrp{-\frac{\mu_C}{T_C}-\frac{\mu_D}{T_D}+\frac{\mu_{CD}}{T_{CD}}}=-\frac{dN_C}{T}(\mu_C+\mu_D-\mu_{CD})=0.
+    \end{align}
+    Therefore, the equilibrium condition is: $        \mu_C+\mu_D=\mu_{CD}$
+    Note that if the ratio of reactants and/or products is not 1, then this ratio is reflected in the equilibrium condition.
+    \begin{equation}
+        \ce{O_2 + 2H_2 <-> 2H_2O} \implies \mu_{O_2} + 2\mu_{H_2}=2\mu_{H_2O}
+    \end{equation}
+    To generalise this: $        \sum_\text{reactants}\nu_i\mu_i = \sum_\text{products}\nu_j\mu_j$. 
+    where $\nu_i$ are the stoichiometric constants.\\
+    Apart from what we discussed so far, at certain cases, we might have no particle conservation condition. In that case, one of the particle numbers is independent of the others.
+    \begin{equation}
+        \frac{d N_B}{d N_A} = 0
+    \end{equation}
+    Then, at the equilibrium,
+    \begin{equation}
+        \frac{\del S}{\del N_A}=\frac{\del S_A}{\del N_A}+\frac{\del S_B}{\del N_B}\frac{d N_B}{d N_A}=0\implies \frac{\del S_A}{\del N_A}=-\frac{\mu_A}{T}=0.
+    \end{equation}
+    This is the case in black body radiation, which we will get into no further details. 
+    Now let us look at what happens when the systems approach equilibrium. For particle addition/removal,
+    \begin{equation}
+        \frac{d S}{d T} \frac{\del S}{\del N_A}\frac{d N_A}{d t}+\frac{\del S}{\del N_B}\frac{d N_B}{d t}=\frac{d N_A}{d t}\lrp{\frac{\del S}{\del N_A}-\frac{\del S}{\del N_B}}=-\frac{d N_A}{d t}(\mu_A-\mu_B)\geq 0.
+    \end{equation}
+    Therefore, the number of particles on the system where the chemical potential is greater decreases as the system approaches the equilibrium. \\
+    Looking at the reactions, 
+    \begin{equation}
+        \frac{d S}{d T} = -\frac{d N_C}{d t}\frac{\mu_C+\mu_D-\mu_{CD}}{T}\geq0
+    \end{equation}
+    Then if $\mu_C+\mu_D>\mu_{CD}$, the reaction will run forward and vice versa. 
+    \section{Measuring and Calculating \\ the Chemical Potential}
+        Recall from the first chapters that the Gibbs free energy was defined as
+        \begin{equation}
+            G = H-TS = U+PV_TS.
+        \end{equation}
+        This implies
+        \begin{equation}
+            dG = -SdT + VdP + \mu dN
+        \end{equation}
+        which can be measured expermientally. With this definition,
+        \begin{equation}
+            \mu = \lrp{\frac{\del G}{\del N}}_{T,P}.
+        \end{equation}
+        Now, since $U$ is extensive, it scales like
+        \begin{equation}
+            U(NS,NV)=NU(S,V).
+        \end{equation}
+        This, together with $U=TS-PV+\sum\mu_i N_i$ gives $G=\mu N$ via Euler's equations for homogenous functions.\footnote{See Appendix 3}. Therefore, the chemical potential is the Gibbs free energy per particle. To calculate $\mu$ we must specify the conditions. For a thermally isolated system, we know that $S=k_B\ln\Omega$. But $\Omega$ depends on $N!$. Then,
+        \begin{equation}
+            \mu=-T \frac{\del S}{\del N}_{U,V}=-k_BT \frac{\del \ln\Omega}{\del N}.
+        \end{equation}
+        Consider atoms on a lattice as an example. Each atom can be in $g$ different states with the same energy, i.e. they are $g$-fold degenerate. Then, $\Omega = g^N$. Therefore,
+        \begin{equation}
+            \ln\Omega = N\ln g \implies \mu = -k_BT\ln g.
+        \end{equation}
+        This shows that the chemical potential goes like the degeneracy of the system. \\
+        Another example is an ideal gas of spin-0 atoms. Recall that 
+        \begin{equation}
+            S = Nk_B\lrp{\ln\frac{V}{N}+\frac{3}{2}\ln\frac{mU}{3\pi\hbar^2 N}+\frac{5}{2}}.
+        \end{equation}
+        \begin{equation}
+            \implies \mu = -T\frac{\del S}{\del N}=-T\frac{S}{N}-Nk_BT\lrp{-\frac{N}{V}\frac{V}{N^2}-\frac{3}{2}\frac{3\pi\hbar^2N}{mU}\frac{mU}{3\pi\hbar^2 N^2}}
+        \end{equation}
+        \begin{equation}
+            \implies \mu = -\frac{TS}{N}+k_BT+\frac{3k_BT}{2} = -k_BT\lrp{\ln\frac{V}{N}+\frac{3}{2}\ln\frac{mU}{3\pi\hbar^2N}}
+        \end{equation}
+        The first term is the logarithm $1/n$ where $n$ is the number density we defined before. By the definition of the internal energy from the equipartition theorem, the second term is
+        \begin{equation}
+            \frac{3}{2}\ln\frac{mU}{3\pi\hbar^2N}=\frac{3}{2}\ln\frac{3mNk_BT}{6\pi\hbar^2N}=\ln\lrp{\frac{mk_BT}{2\pi\hbar^2}}^{3/2}.
+        \end{equation}
+        This is the inverse thermal de Broglie wavelength cubed that we defined before. We now name this quantity as \textbf{quantum degeneracy} $n_Q$. Then,
+        \begin{equation}
+            \mu=k_BT\ln\frac{n}{n_Q}.
+        \end{equation}
+        At constant temperature ensemble,
+        \begin{equation}
+            \mu=\frac{\del F}{\del N}=-k_BT \frac{\del \ln Z}{\del N}.
+        \end{equation}
+        Consider a free particle with an energy offset: $\varepsilon(k)=\Delta + \frac{\hbar^2k^2}{2m}$. Then,
+        \begin{equation}
+            Z_1 = \sum_ke^{-\beta\varepsilon(k)} \hspace{0.5cm} Z_N = \frac{Z_1^N}{N!}.
+        \end{equation}
+        \begin{equation}
+            F = -k_BT\ln Z_N\approx -k_BT(N\ln Z_1-N\ln N+N)=-k_BTN(\ln Z_1-\ln N+1)
+        \end{equation}
+        \begin{equation}
+            \mu = \frac{\del F}{\del N}=-k_BT(\ln Z_1-\ln N +1-1)=-k_BT\ln\frac{Z_1}{N} = \Delta + k_BT\ln\frac{n}{n_Q}
+        \end{equation}
+
+    \section{Grand Canonical Ensemble}
+        The grand canonical ensemble is an ensemble consisting of a particle and heat reservoir. In addition to constant temperature as in the canonical ensemble, the chemical potential is also constant in the grand canonical ensemble. 
+        \begin{equation}\label{eq:gcetemp}
+            \frac{1}{T}=k_B\lrp{\frac{\del \ln\Omega_R}{\del U_R}}_{N_R}
+        \end{equation}
+        \begin{equation}
+            \mu = -k_BT\lrp{\frac{\del \ln\Omega_R}{\del N_R}}_{U_R}
+        \end{equation}
+        By integrating (\ref{eq:gcetemp}), we obtain $\Omega_R$.
+        \begin{equation}
+            \frac{U_R}{k_BT}=\ln\Omega_R+f(N_R)\implies \Omega_R = \alpha e^{\beta U_R+f(N_R)}
+        \end{equation}
+        By substituting this into the chemical potential,
+        \begin{equation}
+            \mu = -k_BT\lrp{\frac{\del \ln\alpha}{\del N_R}+\frac{\del }{\del N_R}(\beta U_R+f(N_R))} = -k_BT \frac{\del f}{\del N_R}
+        \end{equation}
+        \begin{equation}
+            \implies f(N_R)=-\frac{\mu}{k_BT}N_R
+        \end{equation}
+        Therefore,
+        \begin{equation}
+            \Omega_R = \alpha e^{\beta(U_R-\mu N)}
+        \end{equation}
+        If the resevoir is isolated,
+        \begin{equation}
+            \Omega_R(U_A,N_A)=\alpha e^{\beta\lrb{(U_T-U_A)-\mu(N_T-N_A)}}=\alpha'e^{-\beta(U_A-\mu N_A)}.
+        \end{equation}
+        Next, imagine that system $A$ is in quantum state $i$ with wavefunction $\psi_i$. This wavefunction is both an eigenstate of $\hat{H}$ and $\hat{N}$. Then, the total number of available states to the joint system when $A$ is in state $\psi_i$ is
+        \begin{equation}
+            \Omega_i=\alpha'e^{-\beta(E_i-\mu N_i)}.
+        \end{equation}
+        For $\sum_ip_i=1$, we have
+        \begin{equation}
+            p_i = \frac{e^{-\beta(E_i-\mu N_i)}}{\sum_ie^{-\beta(E_i-\mu N_i)}}
+        \end{equation}
+        The denominator is the \textbf{grand partition function} $\Theta$.
+    \section{The Grand Potential}
+        We start with the definition of the entropy.
+        \begin{align}
+            S_M =& k_B\ln\Omega = k_B\ln\frac{M!}{n_1!n_2!...} \approx k_B\lrp{M\ln M-\sum_in_i\ln n_i} \notag\\
+                =& k_B\lrp{\ln M \sum_in_i-\sum_in_i\ln n_i}= -k_BM\sum_i\frac{n_i}{M}\ln\frac{n_i}{M}
+        \end{align}
+        For a single system,
+        \begin{equation}
+            S = \frac{S_M}{M} = -k_B\sum p_i\ln p_i
+        \end{equation}
+        For the grand canonical ensemble,
+        \begin{equation}
+            S = -k_B\sum p_i\ln particles_i = -k_B\sum p_i\lrb{-(E_i-\mu N_i)\beta -\ln\Theta}
+        \end{equation} 
+        Using the fact that sum of the probabilities is equal to one,
+        \begin{equation}
+            S = \frac{\bar{U}}{T} - \frac{\mu \bar{N}}{T}+k_BT\ln\Theta
+        \end{equation}
+        We rearrange this equation to get the \textbf{grand potential} $\Phi_G$. 
+        \begin{equation}
+            \bar{U}-\mu\bar{N}-TS = -k_BT\ln\Theta = \Phi_G
+        \end{equation}
+        Using the grand potential, one can derive all the thermodynamics for systems with variable numbers of particles. An expression for $dS$ can be obtained by writing the entropy as a function of extensive quantitites.
+        \begin{equation}
+            dS = \frac{\del S}{\del U} d\bar{U} + \frac{\del S}{\del V}dV + \frac{\del S}{\del N}d\bar{N} = \frac{d\bar{U}+PdV-\mu d\bar{N}}{T}
+        \end{equation}
+        Hence, $d\bar{U} = -PdV +\mu d\bar{N}+TdS$. A small change in the grand potential is
+        \begin{align}
+            d\Phi_G =& d\bar{U} -d(\mu\bar{N})-d(TS) = -PdV +\mu d\bar{N}+TdS -\bar{N}d\mu-\mu d\bar{N}-SdT-TdS \notag\\
+                    =& -PdV-\bar{N}d\mu-SdT
+        \end{align}
+        This equation can be used to obtain entropy, pressure, and the average number of particles.
+        \begin{align}
+            S =& -\lrp{\frac{\del \Phi_G}{\del T}}_{V,\mu} \\
+            P =& -\lrp{\frac{\del \Phi_G}{\del V}}_{T,\mu} \\
+            \bar{N}=& -\lrp{\frac{\del \Phi_G}{\del \mu}}_{T,V}
+        \end{align}
+    \section{Exercises}
+        \begin{eocproblem*}{Section 9.8 from Bowley \& Sanchez}
+            Suppose there is a surface on which there are sites where atoms can be absorbed; each site can be empty or it can have at most one absorbed atom. Let us take one site to be the system. What is the average number, $n_i$, of particles on site $i$?
+        \end{eocproblem*}
+        For site $i$, either there is no atom present, in which case the energy is zero, or there is one atom present with energy $\varepsilon_i$. Then the grand partition function is the sum over two states. 
+        \begin{equation}
+            \Theta = \sum_ie^{-\beta(E_i-\mu N_i)} = 1 + e^{-\beta(\varepsilon-\mu)}
+        \end{equation}
+        Therefore, the probability is
+        \begin{equation}
+            p_i = \frac{e^{-\beta(\varepsilon_i-\mu)}}{1+e^{-\beta(\varepsilon_i-\mu)}} = \frac{1}{e^{\beta(\varepsilon_i-\mu)}+1}.
+        \end{equation}
+        With this, we get the average occupation as
+        \begin{equation}
+            n = 0\times(1-p_i)+1\times p_i = \frac{1}{e^{\varepsilon-\mu}+1}
+        \end{equation}

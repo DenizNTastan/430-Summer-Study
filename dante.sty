@@ -1,0 +1,189 @@
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dante}[2024/06/15 v.2.3]
+
+
+%/////////////////// PACKAGES //////////////////////////////////
+%\RequirePackage{mathpazo}
+ % Font encoder
+%\RequirePackage[]{venturis2} %Font
+\RequirePackage[]{antpolt}
+%\RequirePackage[]{venturisold}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{float, graphicx, wrapfig} % Required for inserting images and do so in precise locations.
+\RequirePackage{amsfonts,amsmath,amssymb,amsthm} %Packages of American Mathematics Society
+\RequirePackage{geometry} %Allows modification of the geometry of the page
+\RequirePackage{tensor} %Allows writing tensors
+\RequirePackage{siunitx}
+\RequirePackage{xifthen} %Provides \isempty test
+\RequirePackage{calligra} %To be able to draw the Griffiths' r
+\RequirePackage{framed} %Framing the equations and texts
+\RequirePackage{caption} %More controls on captions
+    \captionsetup{justification=centering,margin=2cm}
+\RequirePackage{pdfpages} %To add pdf's to the document
+\RequirePackage{kantlipsum, lipsum} %Better version of lorem ipsum
+\RequirePackage{coffeestains} %Just for the fun of it
+\RequirePackage{extarrows}
+
+\RequirePackage{tikz,circuitikz,pgfplots} %Love to Hate
+    \usetikzlibrary{decorations.markings}
+    \usetikzlibrary{patterns}
+    \usetikzlibrary{positioning}
+    \pgfplotsset{compat=newest}
+    \usepgfplotslibrary{fillbetween}
+
+
+\colorlet{mydarkblue}{blue!30!black}
+
+\RequirePackage{fancyhdr} %For better headers and footers
+    \usetikzlibrary{arrows,shapes}
+    \pagestyle{fancy}
+    \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+    \renewcommand{\sectionmark}[1]{\markright{\arabic{section}.\ #1}}
+    \fancyhead[EL,OR]{\thepage}
+    \fancyhead[ER]{\rightmark}
+    \fancyhead[OL]{\leftmark} 
+    \fancyfoot[EC,OC]{}
+\RequirePackage{fancyvrb} %To display LaTeX lines of code without executing them.
+\RequirePackage{empheq} %To draw boxes around multiple lines of equations.
+    \newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+
+\RequirePackage[Bjarne]{fncychap} %For better chapter headings
+    % Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+    \ChNameUpperCase
+    \ChTitleAsIs
+    \ChRuleWidth{2pt}
+    \ChNumVar{\fontsize{25}{10}\usefont{OT1}{ptm}{m}{n}\selectfont}
+    \ChTitleVar{\fontsize{25}{17}\selectfont \sc}
+    \ChNameVar{\fontsize{18}{4}\selectfont \sc}
+
+
+\RequirePackage{xcolor} % For defining new colours
+\definecolor{DenizBlue}{HTML}{01357a}
+\definecolor{UnsaldiRed}{HTML}{b33114}
+\definecolor{KayrahanGreen}{HTML}{636b2f}
+\RequirePackage[most]{tcolorbox} %For better colour boxes
+    \newtcbtheorem{theorem}%
+        {Theorem}{colback=black!5!white,colframe=KayrahanGreen,fonttitle=\bfseries, breakable, enhanced, before skip=5mm}{theorem}
+    \newtcbtheorem{theoremcorollary}%
+        {}{colback=black!5!white,colframe=KayrahanGreen,fonttitle=\bfseries, breakable, enhanced, before skip=5mm}{theoremcorollary}
+    \newtcbtheorem{law}%    
+        {}{colback=blue!5!white,colframe=DenizBlue,fonttitle=\bfseries, breakable, enhanced, before skip=5mm}{law}
+    \newtcbtheorem{lawcorollary}%
+        {}{colback=blue!5!white,colframe=DenizBlue,fonttitle=\bfseries, breakable, enhanced, before skip=5mm}{lawcorollary}
+    \newtcbtheorem{problem}%
+        {Problem}{colback=white, colframe=UnsaldiRed, fonttitle=\bfseries, breakable, enhanced, before skip=5mm}{problem}
+    \newtcbtheorem{eocproblem}%
+        {Problem}{colback = gray!5!white, colframe = white!10!black, fonttitle = \bfseries, breakable, enhanced, before skip=5mm}{eocproblem}
+
+\RequirePackage{setspace} %For more control over the spacings
+    \onehalfspacing
+
+\RequirePackage{tocloft} %For more control on table of contents
+
+\RequirePackage[version=4,arrows=pgf-filled,
+textfontname=rm,
+mathfontname=mathsf]{mhchem} %To write chemical equations
+
+%\RequirePackage[nottoc,numbib]{tocbibind}
+    \AtBeginDocument{\renewcommand{\bibname}{References}}
+
+\RequirePackage[normalem]{ulem}
+\RequirePackage{multicol} %For multicolumn
+\RequirePackage{enumitem} %For better control on enumerate and itemize environments.
+\RequirePackage{mathabx}
+\RequirePackage{cancel}
+\RequirePackage[toc,page]{appendix}
+% It is better if hyperref is the last package loaded. I do not know why, I just read it somewhere. Source? Ummm, A guy told me.
+\RequirePackage{hyperref}
+    \hypersetup{
+        colorlinks = true,
+        linkcolor = black,
+        urlcolor = blue,
+        citecolor = green
+    }
+
+
+%/////////////////////////////////////////////////////////////////////
+
+
+\newcounter{appendixchapter}
+\newcommand{\addpendix}[2]{ % #1 is the title, #2 is the label
+    \refstepcounter{appendixchapter}
+    \chapter*{Appendix \arabic{appendixchapter}\\ #1}
+    \addcontentsline{toc}{chapter}{Appendix \arabic{appendixchapter}\\ #1}
+    \label{#2}
+    \setcounter{equation}{0} % reset equation counter
+    \renewcommand{\theequation}{A\arabic{appendixchapter}.\arabic{equation}}
+}
+
+
+\setlength\parindent{0pt}
+
+
+    
+%---------- To draw the Griffits' r -----------------------
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+%-------------------------------------------------------------
+
+%---------- To draw a cool quote box ---------------------
+\newcommand{\quotebox}[1]
+{
+  \begin{center}
+    \fcolorbox{white}{blue!15!gray!15}{
+      \begin{minipage}{0.99\linewidth}\vspace{10pt}
+        \center
+        \begin{minipage}{0.8\linewidth}{\space\huge``}{\setlength{\parindent}{1.5em}#1}{\hspace{1.5em}\break\null\huge\hfill''}
+        \end{minipage}
+        \smallbreak
+      \end{minipage}
+    }
+\end{center}
+} 
+%------------------------------------------------------
+
+%------------- Shortcut Commands -------------------
+\newcommand{\grifr}{\ensuremath{\mathcalligra{r}}} 
+\newcommand{\del}{\partial} 
+\renewcommand{\v}[1]{\mathbf{#1}}
+\newcommand{\bra}[1]{\left< #1 \right|}
+\newcommand{\ket}[1]{\left| #1 \right>}
+\newcommand{\expval}[1]{\langle #1 \rangle}
+\newcommand{\braket}[3]{\left< #1 \ifthenelse{\isempty{#2}}{\right.\left|\text{ }}{\right| #2 \left|} #3 \right>}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\lrp}[1]{\left( #1 \right)}
+\newcommand{\lrb}[1]{\left[ #1 \right]}
+\newcommand{\lrc}[1]{\left\{ #1 \right\}}
+\newcommand{\h}[1]{\hat{#1}}
+\newcommand{\bas}[1]{\mathbf{\hat{e}}_{#1}}
+\newcommand{\chris}[2]{\tensor{\Gamma}{^{#1}_{#2}}}
+\newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
+\newcommand{\deriv}[2]{\frac{d #1}{d #2}}
+\newcommand{\periv}[2]{\frac{\del #1}{\del #2}}
+\newcommand{\ceriv}[2]{\frac{D #1}{d #2}}
+\newcommand{\sqfrac}[2]{\sqrt{\frac{#1}{#2}}}
+\renewcommand{\d}{\text{d}}
+\newcommand{\dbar}{\d\hspace*{-0.13em}\bar{}\hspace*{0.1em}}
+\newcommand{\hil}{\mathcal{H}}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\newcommand{\vspan}[1]{\text{span}\lrp{#1}}
+\newcommand{\dyad}[2]{\ket{#1}\bra{#2}}
+\newcommand{\id}{\mathds{1}}
+\newcommand{\tr}{\text{Tr}}
+\newcommand{\SO}{\text{SO}}
+
+%-----------------------------------------------------
+
+\numberwithin{equation}{section} %Numbers the equations based on the section.
+
+%------------- Determines the page and margin sizes ------------
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=30mm,
+ right=30mm,
+ top=20mm,
+ }
+%------------------------------------------------------------
+

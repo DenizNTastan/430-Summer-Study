@@ -1,0 +1,67 @@
+\addpendix{Black Hole Thermodynamics}
+    a In general relativity, black holes obey laws that are analogous to the laws of thermodynamics. In quantum gravity, these become the actual laws of thermodynamics. For our considerations here, we take the \textbf{Reissner-Nordstrom black hole}. The Reissner-Nordstrom black hole is a charged, spherical symmetric (non-rotating), asymptotically flat solution to the Einstein field equations. We begin by considering the Einstein-Maxwell action (with $G_N = 1$): Gravity action coupled to electromagnetism.
+    \begin{equation}
+        S = \frac{1}{16\pi}\int d^4x\sqrt{-g}(R-F^{\mu\nu}F_{\mu\nu})
+    \end{equation}
+    Equations of motion coming from this action are
+    \begin{equation}
+        R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu}=8\pi T_{\mu\nu} \hspace{0.25cm}\&\hspace{0.25cm}\nabla_\mu F^{\mu\nu}=0
+    \end{equation}
+    with Maxwell stress tensor
+    \begin{equation}
+        T_{\mu\nu}=-\frac{2}{\sqrt{-g}}\frac{\delta S^\mathrm{matter}}{\delta g^{\mu\nu}} = \frac{1}{4\pi}\lrp{-\frac{1}{4}g_{\mu\nu}F_{\alpha\beta}F^{\alpha\beta}+F_{\mu\gamma}\tensor{F}{_\nu^\gamma}}.
+    \end{equation}
+    The Reissner-Nordstrom solution is the metric
+    \begin{equation}
+        ds^2 = -f(r)dt^2+\frac{dr^2}{f(r)}+r^2d\Omega_2^2
+    \end{equation}
+    where $d\Omega_2^2$ is the two-sphere metric and $f(r)=1-\frac{2M}{r}+\frac{Q^2}{r^2}$. R-N solution also includes an electromagnetic field
+    \begin{equation}
+        A_\mu dk^\mu = -\frac{Q}{r}dt \implies F_{rt}=\frac{Q}{r^2}.
+    \end{equation}
+    Since the charge is conserved by the Maxwell equation in (A3.2), this charge is the charge of the black hole only. Similar to Kerr solution, the R-N solution admits to radii:
+    \begin{equation}
+        f(r) = \frac{1}{r^2}(r-r_+)(r-r_-)
+    \end{equation}
+    where
+    \begin{equation}
+        r_\pm = M \pm \sqrt{M^2-Q^2}.
+    \end{equation}
+    Here, $r_+$ is the event horizon of the black hole while $r_-$ is the Cauchy horizon. In our discussions, we always consider $M>Q>0$ since for $\abs{Q}>M$, radius of the event horizon is negative. This results in a naked singularity. \textbf{Cosmic censorship conjecture} states that no physical star collapse can form a naked singularity. \\
+    Now, let us define a quantity $S$ as
+    \begin{equation}
+        S = \frac{A_H}{4\hbar G_N}
+    \end{equation}
+    where $A_H$ is the horizon area and we reinstated the natural units. Since at the horizon, $ds^2 = r_+^2d\Omega_2^2$, we have
+    \begin{equation}
+        A_H = 4\pi r_+^2 = 4\pi(M+\sqrt{M^2-Q^2})^2.
+    \end{equation}
+    If we vary S,
+    \begin{equation}
+        S = \frac{A_H}{4} = \pi(M+\sqrt{M^2-Q^2})^2
+    \end{equation}
+    \begin{align}
+        dS =& 2\pi(M+\sqrt{M^2-Q^2})\lrp{dM + \frac{2MdM-2QdQ}{2\sqrt{M^2-Q^2}}}\notag \\ 
+           =& 2\pi(M+\sqrt{M^2-Q^2})\lrp{\frac{\sqrt{M^2-Q^2}+M}{\sqrt{M^2-Q^2}}dM-\frac{Q}{\sqrt{M^2-Q^2}}dQ}\notag \\
+           =& \frac{2\pi(M+\sqrt{M^2-Q^2})^2}{\sqrt{M^2-Q^2}}\lrp{dM-\frac{QdQ}{M+\sqrt{M^2-Q^2}}}.
+    \end{align}
+    Defining
+    \begin{equation}
+        T = \frac{\sqrt{M^2-Q^2}}{2\pi(M+\sqrt{M^2-Q^2})^2}
+    \end{equation}
+    and 
+    \begin{equation}
+        \Phi = \frac{Q}{M+\sqrt{M^2-Q^2}},
+    \end{equation}
+    we get
+    \begin{equation}
+        TdS = dM - \Phi dQ.
+    \end{equation}
+    Note that $\Phi = Q/r_+$ and thus, it is the electric potential of the horizon. We can also consider the mass of the black hole as the total energy of this spacetime. Therefore, (A3.14) is similar to the second law of thermodynamics if we can identify our $S$ as the entropy and $T$ as the temperature. We can also state that $T$ is related to the surface gravity, $\kappa$, of the black hole via
+    \begin{equation}
+        T = \frac{\kappa}{2\pi}.
+    \end{equation} 
+    Since it can be shown that the surface gravity is constant everywhere on the spherically symmetric horizon, this is analogous to the zeroth law: The temperature is constant in equilibrium. \\
+    \\
+    By discussing quantum field theory on curved spacetimes, we can deduce a strange effect. A uniformly accelerating observer in a Minkowski vacuum feels a temperature bath. This observation of a temperature bath is called the \textbf{Unruh effect}. Since a temperature bath requires interactions with particles, we realise that the vacuum observed by this observer is different than the Minkowski vacuum. Indeed, the reference frame of the observer forms a space called the \textbf{Rindler space}. One can show that the vicinity of the event horizon of a black hole is a Rindler space. \\
+    Since we established that the vicinity of a black hole is a Rindler space, and a Rindler space give rise to a temperature bath via the Unruh effect, one can theorise that a black hole is in equilibrium with this temperature bath around it and thus emits radiation. This is the \textbf{Hawking radiation}. Therefore, $T$ in (A3.12) is indeed the temperature and therefore, the quantity we defined as $S$ in (A3.8) is indeed the entropy of the black hole.

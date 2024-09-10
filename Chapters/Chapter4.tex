@@ -1,0 +1,486 @@
+\chapter{Ideas of Statistical Mechanics}
+
+Statistical mechanics deals with the cause and effect relationship between micro and macro states.
+\paragraph{Ensemble:} A (imaginary) collection of $\Gamma$ number of systems with the same macro states but different time dependent micro states.
+
+%insert tikz images
+
+
+\paragraph{Example:}
+
+$\underbrace{\stkout{\updownarrows\downuparrows \updownarrows \upuparrows \updownarrows\downdownarrows \cdots}}_{N\textrm{ spins (micro state)}} \quad \longleftrightarrow \quad \underbrace{m=n_\uparrow + n_\downarrow}_\textrm{magnetization (macro state)}$
+
+\begin{problem}{How many micro states are there for a macro state of $m=0$ and $m=-2$?}
+a
+$\underbrace{
+\stkout{\upuparrows\downdownarrows}\;
+\stkout{\downuparrows\updownarrows}\;
+\stkout{\downuparrows\downuparrows}\;
+\stkout{\downdownarrows\upuparrows}\;
+\stkout{\updownarrows\downuparrows}\;
+\stkout{\downuparrows\updownarrows}}_{\Omega(m=0)=6}$ \quad
+$\underbrace{
+\stkout{\updownarrows\downdownarrows}\;
+\stkout{\downuparrows\downdownarrows}\;
+\stkout{\downdownarrows\downuparrows}\;
+\stkout{\downdownarrows\updownarrows}}_{\Omega(m=-2)=4}$ \\ \\ $\Omega$ is a function of $m \implies$ not all macro states are equally likely.
+\end{problem}
+
+\section{Averages}
+One can only measure averages of an ensemble. This is also true if one measures a single system in a long interval of time.
+\paragraph{Ensemble Average:}Average of a property at a given point in time $t_0$ over $\Gamma$ number of systems in an ensemble.
+
+\begin{equation}
+    \Bar{A_e} = \sum_{i=1}^{\Gamma}A(i,t_0) \quad,\quad m\textrm{: system index}
+\end{equation}
+\newpage
+\paragraph{Time Average:}Average of a property for one system over a long period of time.
+
+\begin{equation}
+    \Bar{A_t} = \frac{1}{m}\sum_{n=0}^{m-1}A(1,t_n) \quad,\quad m\textrm{: time steps}
+\end{equation}
+
+\paragraph{Types of Ensembles:} Three most common types are
+\begin{itemize}
+    \item \textbf{Micro canonical:} Closed isolated systems \quad $(N, V, E)$
+    \item \textbf{Canonical:} Isothermal systems \quad $(N, V, T)$
+    \item \textbf{Grand canonical:}: Open isolated systems \quad $(\mu, V, E)$.
+\end{itemize}
+
+\begin{law*}{Postulates of Statistical Mechanics}
+\begin{itemize}
+    \item \textbf{$P_1$:} Averages converge to the same value as $t\longrightarrow\infty$ and $\Gamma\longrightarrow\infty$
+    \item \textbf{$P_2$:} In the micro canonical ensemble, each micro state has equal probability.
+\end{itemize}
+\end{law*}
+
+%insert billard ball tikz
+\paragraph{Note:}We will refer to the number of micro states in the canonical ensemble $\Omega(N, V, T)$
+
+\section{Revisiting Entropy}
+
+\begin{law*}{Boltzmann's Hypothesis}
+The entropy of a system is related to the probability of its being in a given quantum state.
+\end{law*}
+
+Using the second postulate
+\begin{equation}
+    p = \frac{1}{\Omega} \implies S=\phi(\Omega).
+\end{equation}
+
+In order to find $\phi$, consider two non-interacting systems.
+
+\begin{equation}
+    \begin{rcases}
+S_A = \phi(\Omega_A)\\
+S_B = \phi(\Omega_B)
+\end{rcases}
+\quad
+S_{AB}= \phi(\Omega_{AB}) = S_A + S_B 
+\end{equation}
+
+Here, $S_{AB}$ is called the combined entropy, where its corresponding combined number of states can be written as
+\begin{equation}    \Omega_{AB}=\Omega{A}*\Omega{B}
+\end{equation}
+\begin{equation}
+\phi(\Omega{A}*\Omega{B})=\phi(\Omega_A)+\phi(\Omega_B)
+\end{equation}
+This property is called the additivity property and we see it in logarithmic functions. Hence,
+\begin{equation}
+    \phi \; \propto \: \ln{\Omega}
+\end{equation}
+Let $k_B$ be the proportionality constant. Eq. \ref{eq:boltzmann_entropy} is called the \emph{Boltzmann's entropy}.
+
+\begin{equation}
+    \boxed{S=k_B\ln{\Omega}}
+    \label{eq:boltzmann_entropy}
+\end{equation}
+
+\pagebreak
+
+\begin{problem}{Verify Boltzmann's Entropy for an ideal gas.}
+a Divide the total volume $V$ into equal $\Delta V$ portions. Let's find how many ways of placing $N$ gas molecules into $V/\Delta V$ portions. \\
+Ideal gas molecules act like point particles, so that they do not occupy a volume. Each molecule can be placed onto any previously placed molecule. Hence the available number of states is
+
+\begin{equation}
+    \Omega=\left(\frac{V}{\Delta V}\right)^N .
+\end{equation}
+
+Substitute into \ref{eq:boltzmann_entropy}.
+
+\begin{equation}
+    S=Nk_B\ln{\left(\frac{V}{\Delta V}\right)}
+\end{equation}
+
+Entropy difference between initial ($S_0, V_0$) and final ($S, V$) states is
+\begin{equation}
+    S - S_0=Nk_B\ln{\left(\frac{V}{V_0}\right)}.
+\end{equation}
+
+Using entropy, derive the equation of state.
+
+\begin{equation}
+    dU = TdS-PdV \implies dS=\frac{1}{T}(dU+PdV) \implies \left(\frac{\partial S}{\partial V} \right)_U = \frac{P}{T}
+\end{equation}
+
+\begin{equation}
+    P=TNk_B\frac{\partial}{\partial V}\ln{\left(\frac{V}{V_0}\right)}=\frac{TNk_B}{V}
+\end{equation}
+
+\begin{equation}
+    \therefore PV=Nk_B T
+\end{equation}
+    
+\end{problem}
+
+\begin{problem}{$N$ particles with spins placed on lattice sites. External magnetic field $\Vec{B}$}
+a
+For a single spin
+
+\begin{equation*}
+    E=
+    \begin{cases}
+        -\mu B \equiv -\varepsilon \quad \textrm{if} \quad \hat{S}_Z \ket{\uparrow}=+\frac{\hbar}{2}\ket{\uparrow} \\
+        +\mu B \equiv -\varepsilon \quad \textrm{if} \quad \hat{S}_Z \ket{\downarrow}=-\frac{\hbar}{2}\ket{\downarrow}
+    \end{cases}
+\end{equation*}
+
+\begin{equation*}
+\underbrace{\stkout{\updownarrows\downuparrows \updownarrows \upuparrows \updownarrows\downdownarrows \cdots}}_{N\textrm{ spins}} \quad
+\longrightarrow \quad
+\textrm{Quantum state (micro state):} 
+    \ket{\psi_i} \equiv \ket{{\updownarrows\downuparrows \updownarrows \upuparrows \updownarrows\downdownarrows \cdots}} 
+\end{equation*}
+
+Consider the macro state with $n_1$ up spins and $n_2$ down spins $N=n_1+n_2$. Let's find the corresponding number of micro states. \\
+
+Total energy: \quad $U=-n_1\varepsilon+n_2\varepsilon = (N-2n_1)\varepsilon$ \\
+
+Micro states: Number of ways of choosing $n_1$ out of $N$ spins.
+
+\begin{equation}
+    \Omega = \frac{N!}{n_1 ! \; (N-n_1)!}
+\end{equation}
+
+Hence, entropy becomes
+
+\begin{equation}
+S=k_B\ln{\Omega}=k_B\ln{\frac{N!}{n_1 ! \; (N-n_1)!}}
+\end{equation}
+\\
+Using the Stirling approximation $N!\approx N\ln{N}-N$, for $N\gg1$ \\ (see Appendix \ref{app:stirling} for proof)
+
+\begin{equation*}
+    \ln{\frac{N!}{n_1 ! \; (N-n_1)!}} \approx \left[N\ln{N}-N+n_1\ln{n_1}+n_1-(N-n_1)\ln{(N-n_1)}+(N-n_1)\right]
+    \notag
+\end{equation*}
+
+\begin{equation}
+    S = k_B\left[N\ln{N}-n_1\ln{N}+n_1\ln{N}-n_1\ln{n_1}-(N-n_1)\ln{(N-n_1)}\right]
+\end{equation}
+
+\begin{equation}
+    S=k_B\left[-N(1-\frac{n_1}{N})\ln{(1-\frac{n_1}{N})}-n_1\ln{\frac{n_1}{N}}\right]
+    \label{eq:spinprob}
+\end{equation}
+
+\begin{equation*}
+    \mathrm{def.}\quad \frac{n_1}{N}= \frac{1-x}{2} \quad \implies \quad 1-\frac{n_1}{N}= \frac{1+x}{2}
+\end{equation*}
+\\
+Eq. \ref{eq:spinprob} becomes
+
+\begin{equation}
+    S=-k_B N\left[ \frac{1+x}{2}\ln{\frac{1+x}{2}}+\frac{1-x}{2}\ln{\frac{1-x}{2}}\right]
+\end{equation}
+Also, write $U$ in terms of $x$.
+\begin{equation}
+    U=-n_1\varepsilon + (N-n_1)\varepsilon = N\varepsilon\left[-\frac{1-x}{2}+\frac{1+x}{2}\right] = N\varepsilon x
+\end{equation}
+
+\begin{equation}
+    \frac{1}{T}=\frac{\partial S}{\partial U} =\frac{\partial S}{\partial x}\frac{\partial x}{\partial U} = \frac{k_B}{2\varepsilon}\ln{\frac{1-x}{1+x}}
+\end{equation}
+
+Rearrange to find $x$.
+\begin{equation}
+    x = \frac{1-e^{2\varepsilon/k_B T}}{1+e^{2\varepsilon/k_B T}} = - \tanh{\frac{\varepsilon}{k_B T}}
+\end{equation}
+
+Find $n1$ and $n2$ using $x$.
+
+\begin{equation}
+    n1=\frac{N}{2}(1+\tanh{x}) \quad,\quad n2=\frac{N}{2}(1-\tanh{x})
+\end{equation}
+
+Hence, the magnetization is
+
+\begin{equation}
+    M=\mu (n_1-n_2)=N\mu \tanh{\frac{\varepsilon}{k_B T}} .
+\end{equation}
+
+%add tikz of magnetizaiton graph
+
+\end{problem}
+
+\begin{problem}{Physics of a rubber band}
+    a
+Rubber band is made up of polymers linked to each other in the form of long chains. This system is controlled by mostly entropy.
+%insert tangled stretched figures
+We can model the band as a series of vectors. Each vector corresponds to a segment and its direction represents the stretching or folding. Total extension of the band is: $l=d(n_+ - n_-)$. Hence we can represent the micro state as a vector. For example: $ \psi_i = \ket{+-+++-+++-+}$ \\
+$l=5d \quad,\quad \Omega = \frac{11!}{3!\;8!}$
+
+
+\textbf{First law for the system:}
+
+Mechanical work done by stretching the band by $dl$ is $F\,dl$.
+
+\begin{equation}
+    dU=T\,dS+F\,dl
+\end{equation}
+
+For any band: $l=n_+ d-(N-n_+)d=(2n_+ -N)d$
+
+\begin{equation}
+   \Omega(n_+)=\frac{N!}{n_+ ! (N-n_+)!}
+   \label{eq:prob7.3}
+\end{equation}
+
+\begin{equation*}
+    \mathrm{def.}\quad x=\frac{l}{Nd}=\frac{2n_+}{N}-1
+\end{equation*}
+
+\begin{equation}
+    \implies \quad n_+=N\frac{x+1}{2} \quad \& \quad n_-=N\frac{1-x}{2}
+    \label{eq:prob7.2}
+\end{equation}
+
+\begin{equation*}
+    \textrm{When }
+    \begin{cases}
+        n_+=N \textrm{ and x=1} \longrightarrow \textrm{max length}\\
+        n_+=\frac{N}{2} \textrm{ and x=0} \longrightarrow \textrm{min length}
+    \end{cases}
+\end{equation*}
+\\
+Substitute Eq. \ref{eq:prob7.2} in \ref{eq:prob7.3}. This will give the same equation as in the spin example.
+
+\begin{equation}
+    S=-k_B N\left[ \frac{1+x}{2}\ln{\frac{1+x}{2}}+\frac{1-x}{2}\ln{\frac{1-x}{2}}\right]
+\end{equation}
+
+$U=\mathrm{const.}$ So, first law becomes
+
+\begin{equation}
+    F\,dl=-T\,dS \implies \frac{F}{T}=\left(\frac{\partial S}{\partial l}\right)_U=\left(\frac{\partial S}{\partial x}\right)_U \frac{dx}{dl}.
+\end{equation}
+
+Since $\frac{dx}{dl}=\frac{1}{Nd}$,
+
+\begin{equation}
+    \frac{F}{T}=\frac{k_B}{2d}\ln{\frac{1+x}{1-x}}=\frac{k_B}{2d}\ln{\left(\frac{1+l/Nd}{1-l/Nd}\right)}.
+    \label{eq:prob7.2}
+\end{equation}
+
+Consider small $\frac{l}{Nd}$. This implies $\ln{(1+x)}\approx x \implies x\ll1$.
+
+\begin{equation}
+    \ln{\left(\frac{1+x}{1-x}\right)} = \ln(1+x) - \ln(1-x) \approx x - (-x)=2x
+\end{equation}
+
+Find $F$ from \ref{eq:prob7.2}.
+
+\begin{equation}
+    F \approx\frac{k_B T}{2d}\frac{2l}{Nd}=\frac{l}{Nd^2}k_B T
+\end{equation}
+
+\end{problem}
+
+\section{The Second Law:\\ Microscopic Origins}
+
+\emph{Once a system reaches equilibrium, how likely for it is to go back?}\\
+
+Using Boltzmann's entropy \ref{eq:boltzmann_entropy}, $S=k_B \ln \Omega$, number of states is $\Omega=e^{S/k_B}$.
+
+Imagine two weakly coupled systems $A$ and $B$, with total entropy 
+\begin{equation}
+S=S_A+S_B 
+    \begin{cases}
+        S_A=S_A(U_A) \\
+    S_B=S_B(U_B)=S_B(U-U_A).
+    \end{cases}
+\end{equation}
+
+Expand $S$ around the internal energy at equilibrium $U_A^*$.
+
+\begin{equation}
+    S(U_A)=S(U_A^*)+ (U_A-U_A^*)\cancelto{0}{\left[\frac{\partial S} {\partial U_A}\right]_\mathrm{equ.}} + \frac{1}{2}(U_A-U_A^*)^2 \left[\frac{\partial^2 S}{\partial U_A^2} \right]_\mathrm{equ.} + \cdots
+\end{equation}
+\\
+When $S'' < 0$, $S(U_A^*)$ is maximum. 
+\\ \quad \\
+Find $\Omega$ for $S(U_A^*)$.
+
+\begin{equation}
+    \Omega = \underbrace{\exp \left({\frac{S(U_A^*)}{k_B} }\right)}_\mathrm{const.} \; \underbrace{\exp{\left(\frac{1}{2}(U_A-U_A^*)^2 \frac{S''}{2k_B}\right)}}_\mathrm{Gaussian}
+\end{equation}
+\\
+Standard deviation is 
+\begin{equation}
+    \Delta U_A^2 = -\frac{k_B}{S''},
+\end{equation}
+which creates fluctuations.
+
+The relative probabilty of the system having $U_A\&U_A^*$ is
+
+\begin{equation}
+    \frac{p(U_A)}{p(U_A^*)}=\frac{\Omega(U_A)}{\Omega(U_A^*)} = \exp{\left( -\frac{(U_A-U_A^*)^2}{2\Delta U_A^2} \right)}
+\end{equation}
+
+\paragraph{Result:} As moving away from equilibrium, the system becomes more unlikely into that state. The size of the fluctuations depend on $S''$. So, let us estimate $S''$.
+
+$\frac{\partial S}{\partial U}$ is directly related to temperature.
+
+\begin{equation}
+    \left(\frac{\partial S}{\partial U_A}\right)_V =\left(\frac{\partial S_A}{\partial U_A}\right)_V+\underbrace{\left(\frac{\partial S_B}{\partial U_A}\right)_V}_{-\frac{\partial S_B}{\partial U_A}} = \frac{1}{T_A}-\frac{1}{T_B} 
+\end{equation}
+\newpage
+
+Taking the second derivative.
+\begin{equation}
+    \frac{\partial^2 S}{\partial U_A^2}=\left(\frac{\partial T_A^{-1}}{\partial U_A}\right)_V + \left(\frac{\partial T_B^{-1}}{\partial U_A}\right)_V = -\frac{1}{T_A^2}\left(\frac{\partial T_A}{\partial U_A}\right)_V -\frac{1}{T_B^2}\left(\frac{\partial T_B}{\partial U_B}\right)_V.
+\end{equation}
+
+Since $T_A$ and $U_A$ are differentiable and continuous,
+
+\begin{equation}
+    \left(\frac{\partial T_A}{\partial U_A}\right)_V = \frac{1}{\left(\frac{\partial T_A}{\partial U_A}\right)_V}=\frac{1}{C_V}
+\end{equation}
+
+Therefore,
+
+\begin{equation}
+    S''=-\frac{1}{T^2}\left(\frac{1}{C_A}+\frac{1}{C_B} \right)
+\end{equation}
+
+Let $T_A = T_B =T$, and if $B$ is a reservoir and $A$ is a regular system, $C_B\gg C_A$.
+
+\begin{equation}
+    \therefore \quad \Delta U_A^2 = -k_B T^2 C_A
+\end{equation}
+
+Now, we can determine the relation between fluctuations and the system size.
+\begin{equation}
+    C_A \;\propto\; N \quad, \quad \Delta U_A^2 \;\propto\; N
+\end{equation}
+\begin{equation}
+    \textrm{Relative spread:}\quad \frac{\Delta U_A}{U_A^*} = \frac{N^{1/2}}{N} \;\propto\; N^{1/2}
+\end{equation}
+\section{Exercises}
+\begin{eocproblem*}{4.13 From Bowley \& Sanchez}
+    {
+    A system is made up of \(N\) oscillators (with \(N\) very large), each with energy levels \(n\) with \(n = 0, 1, \ldots\). The system’s total energy is \(U\), so there can be a division of the energy into \(U/\hbar\omega\) quanta. (\(U/\hbar\omega\) is an integer.) These quanta of energy must be divided amongst the oscillators somehow. Number of arrangements is
+\begin{equation*}
+W = \frac{(N - 1 + U/\hbar\omega)!}{(N - 1)!(U/\hbar\omega)!}.
+\end{equation*}
+From this expression, obtain a formula for the system’s temperature as a function of \(U\) and find the average energy per oscillator as a function of temperature.}
+\end{eocproblem*}
+
+\begin{equation}
+    S = k_B \ln W
+\end{equation}
+
+\begin{equation}
+S = k_B \left[ \ln \left( N - 1 + \frac{U}{\hbar\omega} \right)! - \ln (N - 1)! - \ln \left( \frac{U}{\hbar\omega} \right)! \right]
+\end{equation}
+
+\begin{equation*}
+S = k_B \left[ \left( N - 1 + \frac{U}{\hbar\omega} \right) \ln \left( N - 1 + \frac{U}{\hbar\omega} \right) - (N - 1) \ln (N - 1) - \frac{U}{\hbar\omega} \ln \left( \frac{U}{\hbar\omega} \right) \right]
+\end{equation*}
+
+\begin{equation}
+\frac{1}{T} = k_B \left[ \frac{\ln \left( N - 1 + \frac{U}{\hbar\omega} \right) + 1}{\hbar\omega} - \frac{\ln \left( \frac{U}{\hbar\omega} \right) + 1}{\hbar\omega} \right] = \frac{k_B}\ln{\left(\frac{\hbar\omega(N-1)}{U}+1 \right)}
+\end{equation}
+
+
+\begin{equation}
+T = \frac{\hbar\omega}{k_B} \left[ \ln \left(\frac{\hbar\omega(N - 1)}{U} + 1 \right) \right]^{-1}
+\end{equation}
+\begin{equation}
+S = k_B \ln W
+\end{equation}
+\begin{equation}
+S = k_B \left[ \ln \left( N - 1 + \frac{U}{\hbar\omega} \right)! - \ln (N - 1)! - \ln \left( \frac{U}{\hbar\omega} \right)! \right]
+\end{equation}
+
+\begin{equation*}
+S = k_B \left[ \left( N - 1 + \frac{U}{\hbar\omega} \right) \ln \left( N - 1 + \frac{U}{\hbar\omega} \right) - (N - 1) \ln (N - 1) - \frac{U}{\hbar\omega} \ln \left( \frac{U}{\hbar\omega} \right) \right]
+\end{equation*}
+
+\begin{equation}
+\frac{1}{T} = \left( \frac{\partial S}{\partial U} \right)_V
+\end{equation}
+
+\begin{equation*}
+\frac{1}{T} = k_B \left[ \frac{\ln \left( N - 1 + \frac{U}{\hbar\omega} \right) + 1}{\hbar\omega} - \frac{\ln \left( \frac{U}{\hbar\omega} \right) + 1}{\hbar\omega} \right] = k_B \frac{\ln \left( \hbar\omega(N - 1)/U + 1 \right)}{\hbar\omega}
+\end{equation*}
+
+\begin{equation}
+T = \frac{\hbar\omega}{k_B \left[ \ln \left( \hbar\omega(N - 1)/U + 1 \right) \right]^{-1}}
+\end{equation}
+
+
+\begin{eocproblem*}{4.14 From Bowley \& Sanchez}
+{A system of \(N\) distinguishable particles is arranged such that each particle can exist in one of two states: one has energy \(\epsilon_1\), and the other has energy \(\epsilon_2\). The populations of these states are \(n_1\) and \(n_2\) respectively (\(N = n_1 + n_2\)). The system is placed in contact with a heat bath at temperature \(T\). A simple quantum process occurs in which the populations change: \(n_2 \rightarrow n_2 - 1\) and \(n_1 \rightarrow n_1 + 1\) with the energy released going into the heat bath. Calculate the change in the entropy of the two-level system and the change in the entropy of the heat bath. If the process is reversible, what is the ratio of \(n_2\) to \(n_1\)?}
+\end{eocproblem*}
+
+\begin{equation}
+\Delta S_\mathrm{sys} = k_B \ln \left( \frac{W_F}{W_i} \right)
+\end{equation}
+
+\begin{equation}
+W_F = \frac{N!}{(n_1 + 1)! (n_2 - 1)!}
+\end{equation}
+
+\begin{equation}
+W_i = \frac{N!}{n_1! n_2!}
+\end{equation}
+
+\begin{equation}
+\frac{W_F}{W_i} = \frac{N!}{(n_1 + 1) n_1! (n_2 - 1)!} \cdot \frac{n_1! n_2 (n_2 - 1)!}{N!} = \frac{n_2}{n_1 + 1}
+\end{equation}
+\begin{equation}
+\Delta S_\mathrm{sys} = k_B \ln \left( \frac{n_2}{n_1 + 1} \right)
+\end{equation}
+represnts the energy lost by the system, and gained by the heat bath.
+\begin{equation}
+\Delta S_\mathrm{bath} = \frac{\Delta Q}{T} = \frac{E_i - E_F}{T}
+\end{equation}
+where \(E\) is the total energy of the system.
+\begin{equation}
+E_F = (n_1 + 1) \epsilon_1 + (n_2 - 1) \epsilon_2
+\end{equation}
+\begin{equation}
+E_i = n_1 \epsilon_1 + n_2 \epsilon_2
+\end{equation}
+\begin{equation}
+E_F - E_i = \epsilon_1 - \epsilon_2
+\end{equation}
+\begin{equation}
+\Delta S_{bath} = \frac{\epsilon_2 - \epsilon_1}{T}
+\end{equation}
+If this is a reversible process, \(\Delta S_\mathrm{total} = 0\)
+\begin{equation}
+\Delta S_\mathrm{total} = \Delta S_\mathrm{sys} + \Delta S_\mathrm{bath} = k_B \ln \left( \frac{n_2}{n_1 + 1} \right) + \frac{\epsilon_2 - \epsilon_1}{T} = 0
+\end{equation}
+\begin{equation}
+\frac{n_2}{n_1 + 1} = e^{(\epsilon_1 - \epsilon_2)/k_B T}
+\end{equation}
+Assuming \(n_1\) is large,
+\begin{equation}
+\frac{n_2}{n_1 + 1} \approx \frac{n_2}{n_1} = e^{(\epsilon_1 - \epsilon_2)/k_B T}
+\end{equation}
+
+
+
+

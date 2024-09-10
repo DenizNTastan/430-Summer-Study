@@ -1,0 +1,23 @@
+\addpendix{Proof of Stirling Approximation}{app:stirling}
+
+\begin{equation}
+    \ln{N!} = \ln{N}+\ln{N-1}+\cdots+\ln{2}+\ln{1}=\sum^N_{n=1}\ln{n}
+\end{equation}
+
+For very large $N$,
+
+\begin{equation}
+    \sum^N_{n=1}\ln{n} \quad \longrightarrow  \quad \int_{1}^{N} \ln{x} \,dx .
+\end{equation}
+
+Use integration by parts.
+\begin{equation}
+    \begin{rcases}
+        dv=dx \implies v=x \\ u=\ln{x} \implies du=1/x
+    \end{rcases}\;
+    \ln{N!}\approx x\ln{x}\Big|_1^N - \int_1^N \,dx = N\ln{N}-(N-\cancelto{\scriptsize{\textrm{negligible}}}{1})
+\end{equation}
+
+\begin{equation}
+    \therefore \ln{N!}\approx N \ln{N} - N
+\end{equation}

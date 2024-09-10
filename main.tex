@@ -1,0 +1,123 @@
+\documentclass[a4paper,11pt, twoside]{report}
+
+\setlength{\headheight}{13.59999pt}
+\usepackage{dante}
+\setlength{\parskip}{0.5em}
+
+\fancyhead[EC,OC]{Phys 430}
+\raggedbottom 
+
+\usetikzlibrary{decorations.pathmorphing,decorations.markings,calc} % for random steps & snake
+\usetikzlibrary{arrows.meta} % for arrow size
+\tikzset{>=latex} % for LaTeX arrow head
+\tikzstyle{radiation}=[-{Latex[length=2,width=1.5]},red!95!black!50,opacity=0.7,very thin,decorate,
+                       decoration={snake,amplitude=0.7,segment length=2,post length=2}]
+\begin{document}
+\nocite{*}
+\pagenumbering{gobble}
+
+\setlength{\skip\footins}{0.8cm}
+
+\newcommand\nbvspace[1][3]{\vspace*{\stretch{#1}}}
+% allow some slack to avoid under/overfull boxes
+\newcommand\nbstretchyspace{\spaceskip0.5em plus 0.25em minus 0.25em}
+% To improve spacing on titlepages
+\newcommand{\nbtitlestretch}{\spaceskip0.6em}
+\pagestyle{empty}
+
+\begin{center}
+\bfseries
+\nbvspace[1]
+\Huge
+{\nbtitlestretch\huge
+PHYS 430 STATISTICAL THERMODYNAMICS}
+
+\nbvspace[1]
+\normalsize
+
+Lecture Notes from Summer Study\\
+
+\nbvspace[1]
+\small Compiled and Written by\\
+\Large DENIZ TASTAN \& MERT UNSALDI\\[0.5em]
+
+
+\nbvspace[2]
+
+%\includegraphics[width=4in]{önemli.jpg}
+\nbvspace[3]
+\normalsize
+
+METU\\
+\large
+DEPARTMENT OF PHYSICS
+\nbvspace[1]
+\end{center}
+
+\newpage
+
+\tableofcontents
+
+\pagenumbering{roman}
+\newpage
+\listoffigures
+\newpage
+\vspace*{\fill}
+\begin{center}
+    \LARGE
+    This page is left blank intentionally.
+\end{center}
+\vspace*{\fill}
+\newpage
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\input{Chapters/Chapter1}
+\input{Chapters/Chapter2}
+\input{Chapters/Chapter3}
+\input{Chapters/Chapter4}
+\input{Chapters/Chapter5}
+\input{Chapters/Chapter6}
+\input{Chapters/Chapter7}
+\input{Chapters/Chapter8}
+\input{Chapters/Chapter9}
+\input{Chapters/Chapter10}
+\input{Chapters/Chapter11}
+\input{Chapters/Appendices.tex}
+\newpage
+
+%\input{Appendices/cheatsheet}
+%\input{Appendices/stirling}
+%\input{Appendices/eulerstheorem}
+%\input{Appendices/bhthermodynamics}
+
+\newpage
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{refs} % Entries are in the refs.bib file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+

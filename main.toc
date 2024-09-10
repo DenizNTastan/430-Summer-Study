@@ -1,0 +1,97 @@
+\contentsline {chapter}{\numberline {1}The First Law of Thermodynamics}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Definitions}{1}{section.1.1}%
+\contentsline {paragraph}{System:}{1}{section*.1}%
+\contentsline {paragraph}{Walls:}{1}{section*.2}%
+\contentsline {paragraph}{State:}{1}{section*.3}%
+\contentsline {paragraph}{Equilibrium:}{2}{section*.4}%
+\contentsline {section}{\numberline {1.2}Functions of State}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Mathematical Properties of Functions of States}{4}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Internal Energy}{6}{section.1.3}%
+\contentsline {paragraph}{Note!}{6}{section*.8}%
+\contentsline {subsection}{\numberline {1.3.1}Reversible and Irreversible Processes}{6}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Heat Capacities}{8}{subsection.1.3.2}%
+\contentsline {paragraph}{Heat Capacity ($C$):}{8}{section*.10}%
+\contentsline {section}{\numberline {1.4}Thermodynamic Functions}{10}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Exercises}{10}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Entropy}{15}{chapter.2}%
+\contentsline {paragraph}{A digression:}{15}{section*.12}%
+\contentsline {section}{\numberline {2.1}The Carnot Cycle}{16}{section.2.1}%
+\contentsline {paragraph}{Reservoir / Heat Bath:}{16}{section*.13}%
+\contentsline {paragraph}{Heat Engine: }{17}{section*.15}%
+\contentsline {section}{\numberline {2.2}Definition of Entropy}{21}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The Law of Increase of Entropy}{23}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Approach to Equilibrium}{26}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Exercises}{28}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Probability and Statistics}{33}{chapter.3}%
+\contentsline {paragraph}{Trial:}{33}{section*.22}%
+\contentsline {paragraph}{Event:}{33}{section*.23}%
+\contentsline {paragraph}{Probability:}{33}{section*.24}%
+\contentsline {paragraph}{Statistical Probability:}{33}{section*.25}%
+\contentsline {paragraph}{Classical (A Priori) Probability:}{33}{section*.26}%
+\contentsline {section}{\numberline {3.1}Axioms of Probability Theory}{34}{section.3.1}%
+\contentsline {paragraph}{Principle of Insufficient Reason / Principle of Indifference: }{35}{section*.28}%
+\contentsline {paragraph}{Independent Outcomes:}{35}{section*.29}%
+\contentsline {section}{\numberline {3.2}Counting the Number of Events}{35}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Distributions}{37}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Ideas of Statistical Mechanics}{41}{chapter.4}%
+\contentsline {paragraph}{Ensemble:}{41}{section*.31}%
+\contentsline {paragraph}{Example:}{41}{section*.32}%
+\contentsline {section}{\numberline {4.1}Averages}{41}{section.4.1}%
+\contentsline {paragraph}{Ensemble Average:}{41}{section*.33}%
+\contentsline {paragraph}{Time Average:}{42}{section*.34}%
+\contentsline {paragraph}{Types of Ensembles:}{42}{section*.35}%
+\contentsline {paragraph}{Note:}{42}{section*.36}%
+\contentsline {section}{\numberline {4.2}Revisiting Entropy}{42}{section.4.2}%
+\contentsline {section}{\numberline {4.3}The Second Law:\\ Microscopic Origins}{46}{section.4.3}%
+\contentsline {paragraph}{Result:}{46}{section*.37}%
+\contentsline {section}{\numberline {4.4}Exercises}{47}{section.4.4}%
+\contentsline {chapter}{\numberline {5}The Canonical Ensemble}{50}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Entropy for a System in a \\ Canonical Ensemble}{51}{section.5.1}%
+\contentsline {paragraph}{1) Pressure:}{52}{section*.39}%
+\contentsline {paragraph}{2) Entropy:}{52}{section*.40}%
+\contentsline {paragraph}{3) Heat Capacity:}{53}{section*.41}%
+\contentsline {paragraph}{3) Internal Energy:}{53}{section*.42}%
+\contentsline {section}{\numberline {5.2}Examples}{53}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Two Level System}{53}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Particle in a 1-D and a 3-D Box}{54}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}First Law of Thermodynamics}{56}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Rotational and Vibrational \\ Degrees of Freedom}{57}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Phase Space Representation}{59}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}Equipartition Theorem}{60}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Exercises}{61}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Identical Particles}{65}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Bosons}{66}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Fermions}{67}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Partition Function}{68}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Spin Degrees of Freedom}{70}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Maxwell Distribution of Speeds}{73}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Classical Gas Velocity Distribution}{75}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Planck's Distribution}{77}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Thermodynamics of the \\ Planck Distribution}{82}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Einstein's Model of Vibrations in Solids}{83}{section.8.2}%
+\contentsline {paragraph}{Einstein's model of vibrations:}{83}{section*.52}%
+\contentsline {section}{\numberline {8.3}Debye's Model of Vibrations in Solids}{84}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Solids and Vapours in Equilibrium}{86}{section.8.4}%
+\contentsline {chapter}{\numberline {9}Systems with Variable Numbers \\ of Particles}{88}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Measuring and Calculating \\ the Chemical Potential}{90}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Grand Canonical Ensemble}{91}{section.9.2}%
+\contentsline {section}{\numberline {9.3}The Grand Potential}{92}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Exercises}{93}{section.9.4}%
+\contentsline {chapter}{\numberline {10}Fermi and Bose Particles}{94}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Fermions}{94}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Bosons}{95}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Fermi Gas}{96}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Non-Interacting Bose Gas}{98}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Exercises}{101}{section.10.5}%
+\contentsline {paragraph}{i)}{102}{section*.54}%
+\contentsline {paragraph}{ii)}{102}{section*.55}%
+\contentsline {paragraph}{iii)}{102}{section*.56}%
+\contentsline {chapter}{\numberline {11}Phase Transitions}{105}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Thermodynamic Potential}{105}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Clapeyron Equation}{107}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Phase Separation}{107}{section.11.3}%
+\contentsline {chapter}{Appendices}{109}{section*.58}%
+\contentsline {chapter}{\numberline {A}Proof of Stirling's Approximation}{110}{appendix.a.A}%
+\contentsline {chapter}{\numberline {B}Euler's Theorem for Homogenous Functions}{111}{appendix.a.B}%
+\contentsline {chapter}{\numberline {C}Black Hole Thermodynamics}{112}{appendix.a.C}%
+\contentsline {chapter}{References}{115}{equation.a.C.0.15}%
